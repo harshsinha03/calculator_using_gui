@@ -21,3 +21,15 @@ class Calculator:
         self.create_button("9", 3, 2)
         self.create_button("0", 4, 1)
         self.create_button(".", 4, 2)
+        self.create_button("+", 1, 3)
+        self.create_button("-", 2, 3)
+        self.create_button("*", 3, 3)
+        self.create_button("/", 4, 3)
+
+        self.create_button("Clear", 4, 0)
+        self.create_button("=", 5, 2)
+
+    def create_button(self, text, row, column):
+        # Create button with specified text and position
+        button = tk.Button(self.master, text=text, padx=35, pady=25, command=lambda: self.button_click(text))
+        button.grid(row=row, column=column)
