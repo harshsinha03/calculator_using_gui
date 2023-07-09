@@ -33,24 +33,3 @@ class Calculator:
         # Create button with specified text and position
         button = tk.Button(self.master, text=text, padx=35, pady=25, command=lambda: self.button_click(text))
         button.grid(row=row, column=column)
-
-    def button_click(self, text):
-        if text == "C":
-            self.display.delete(0, tk.END)
-        elif text == "=":
-            try:
-                result = eval(self.display.get())
-                self.display.delete(0, tk.END)
-                self.display.insert(0, result)
-            except:
-                self.display.delete(0, tk.END)
-                self.display.insert(0, "Error")
-        else:
-            self.display.insert(tk.END, text)
-
-# Create main window and Calculator object
-root = tk.Tk()
-my_calculator = Calculator(root)
-
-# Run the GUI
-root.mainloop()
