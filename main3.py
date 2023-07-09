@@ -1,3 +1,3 @@
-a=5
-b=9
-print(a+b)
+def func(a):
+    print(a)
+func(int(input()))
